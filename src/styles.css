@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #eedbce;
+  font-family: "Poppins", sans-serif;
+}
+
+.sticky-container {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.box {
+  width: 50px;
+  height: 1500px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+nav.scroll {
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 1200px;
+  padding: 0 15px;
+}
+
+nav .container .nav-brand {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #12908e;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav .container .nav-toggler {
+  display: none;
+}
+
+nav .container .nav-collapse .social-icons {
+  display: none;
+}
+
+nav .container .nav-collapse .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+nav .container .nav-collapse .navbar .nav-item {
+  padding: 0px 30px;
+}
+
+nav .container .nav-collapse .navbar .nav-item .nav-link {
+  text-decoration: none;
+  color: #222;
+  font-size: 17px;
+  cursor: pointer;
+  position: relative;
+}
+
+nav .container .nav-collapse .navbar .nav-item .nav-link:hover::after {
+  visibility: visible;
+  width: 70%;
+  height: 2px;
+  opacity: 1;
+}
+
+nav .container .nav-collapse .navbar .nav-item .nav-link::after {
+  content: "";
+  margin-top: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: #12908e;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #f7f7f7;
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  }
+  nav .container {
+    position: relative;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  nav .container .nav-toggler {
+    font-size: 2rem;
+    vertical-align: baseline;
+    display: inline;
+    margin-left: auto;
+  }
+  nav .container .nav-toggler i.fas.fa-times {
+    font-size: 2.5rem;
+  }
+  nav .container .nav-collapse {
+    position: absolute;
+    background-color: #eedbce;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 100%);
+    top: -100vh;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+  }
+  nav .container .nav-collapse .navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 70px;
+  }
+  nav .container .nav-collapse .navbar .nav-item {
+    padding: 15px;
+  }
+  nav .container .nav-collapse .navbar .nav-item .nav-link {
+    font-size: 1.8rem;
+  }
+  nav .container .nav-collapse .social-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 30px;
+  }
+  nav .container .nav-collapse .social-icons i {
+    padding: 15px;
+    font-size: 2.5rem;
+    color: #c4421a;
+  }
+  nav .container .nav-collapse .social-icons i:hover {
+    color: #b03b17;
+  }
+  nav .container .nav-collapse.show {
+    top: calc(100% + 15px);
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+  }
+}
+/*# sourceMappingURL=portfolio.css.map */
